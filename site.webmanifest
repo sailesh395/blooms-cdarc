@@ -1,0 +1,13 @@
+{
+  "name": "Blooms Child Development & Rehabilitation Centre",
+  "short_name": "Blooms CDARC",
+  "description": "Child development & rehabilitation centre in Tirupati — therapy, special education and care.",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#22a598",
+  "icons": [
+    { "src": "/assets/img/favicon.svg", "sizes": "any", "type": "image/svg+xml" },
+    { "src": "/assets/img/logo.png", "sizes": "193x95", "type": "image/png" }
+  ]
+}
