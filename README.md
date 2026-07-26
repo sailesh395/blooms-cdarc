@@ -92,9 +92,12 @@ Shared assets: `assets/css/style.css`, `assets/js/main.js`, `assets/img/`.
 
 - **`assets/img/og-cover.jpg`** — ✅ a branded 1200×630 social-share image is included
   (used by all OG/Twitter tags). Replace it later if you want real photography instead.
-- **Gallery photos** (`gallery.html`) — swap the coloured placeholder tiles for real photos
-  of your centre/therapy/activities (with parents' consent). Replace each
-  `<div class="ph" ...>Label</div>` with `<img src="/assets/img/your-photo.jpg" alt="...">`.
+- **Photos across the site** — the hero, gallery, service sections, special-school, about and
+  blog now use free stock photos from **Pexels** (free for commercial use, no attribution
+  required) plus two real photos pulled from your old site. All live in `assets/img/`.
+  Replace any of them with your own centre/therapy photos (with parents' consent) by
+  overwriting the file or changing the `src`. `therapy-room.png` and `hero-child.jpg` are the
+  two originals from your current site.
 - **Team names/photos/qualifications** (`about.html`) — add them to build trust.
 - **Social links** — replace the `https://www.facebook.com/` etc. placeholders (footer of
   every page + `sameAs` in the home JSON-LD) with your real Facebook/Instagram/YouTube URLs.
