@@ -135,7 +135,14 @@ p { margin: 0 0 1rem; }
   }
   .nav-links.open { transform: translateY(0); }
   .nav-links a { display: block; width: 100%; padding: 10px 0; border-bottom: 1px solid var(--line); }
-  .nav .nav-cta .btn-ghost { display: none; }
+  /* keep logo left, group the button + hamburger together on the right */
+  .nav-cta { order: 2; margin-left: auto; gap: 8px; }
+  .nav-toggle { order: 3; margin-left: 6px; }
+  .nav .nav-cta .btn-ghost { display: none; }               /* hide "Call" on mobile */
+  .nav .nav-cta .btn-primary { padding: 9px 16px; font-size: .9rem; }
+}
+@media (max-width: 380px) {
+  .nav .nav-cta .btn-primary { padding: 8px 13px; font-size: .82rem; }
 }
 
 /* ---------- hero ---------- */
