@@ -1,7 +1,7 @@
 /* Blooms CDARC — minimal site JS. No dependencies. */
 (function () {
   "use strict";
-  var WA_NUMBER = "919790811793"; // WhatsApp business number (no +, no spaces)
+  var WA_NUMBER = "919912226009"; // WhatsApp business number (no +, no spaces)
 
   // Mobile nav toggle
   var toggle = document.querySelector(".nav-toggle");
