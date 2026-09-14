@@ -118,22 +118,34 @@
         vid.defaultMuted = true;
         vid.muted = true;
         vid.volume = 0;
-        var startVideo = function() {
+        
+        var forcePlay = function() {
           vid.defaultMuted = true;
           vid.muted = true;
           vid.volume = 0;
-          var promise = vid.play();
-          if (promise && promise.catch) {
-            promise.catch(function() {
-              vid.play().catch(function(){});
-            });
+          if (vid.paused) {
+            var p = vid.play();
+            if (p && p.catch) { p.catch(function(){}); }
           }
         };
-        startVideo();
-        vid.addEventListener('pause', function() { startVideo(); });
-        document.addEventListener('DOMContentLoaded', startVideo);
-        window.addEventListener('load', startVideo);
-        window.addEventListener('pageshow', startVideo);
+        
+        forcePlay();
+        
+        ['pause', 'click', 'dblclick', 'touchstart', 'touchend', 'pointerdown', 'contextmenu'].forEach(function(evt) {
+          vid.addEventListener(evt, function(e) {
+            if (evt === 'pause') {
+              forcePlay();
+            } else {
+              e.preventDefault();
+              e.stopPropagation();
+            }
+          }, true);
+        });
+
+        document.addEventListener('DOMContentLoaded', forcePlay);
+        window.addEventListener('load', forcePlay);
+        window.addEventListener('pageshow', forcePlay);
+        setInterval(forcePlay, 2000);
       }
     })();
   </script>
