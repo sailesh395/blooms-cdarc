@@ -179,6 +179,7 @@ p { margin: 0 0 1rem; }
   object-fit: cover;
   z-index: 1;
   pointer-events: none;
+  filter: brightness(1.05) saturate(1.05);
 }
 .hero-video::-webkit-media-controls,
 .hero-video::-webkit-media-controls-enclosure,
@@ -195,7 +196,7 @@ p { margin: 0 0 1rem; }
 .hero-video-overlay {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0.65) 100%);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.45) 100%);
   z-index: 2;
   pointer-events: none;
 }
