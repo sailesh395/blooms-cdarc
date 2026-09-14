@@ -178,12 +178,14 @@ p { margin: 0 0 1rem; }
   transform: translate(-50%, -50%);
   object-fit: cover;
   z-index: 1;
+  pointer-events: none;
 }
 .hero-video-overlay {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.42) 0%, rgba(0, 0, 0, 0.65) 100%);
   z-index: 2;
+  pointer-events: none;
 }
 .hero-video-content {
   position: relative;
@@ -191,6 +193,7 @@ p { margin: 0 0 1rem; }
   width: 100%;
   display: flex;
   justify-content: center;
+  pointer-events: auto;
 }
 .hero-text-card {
   max-width: 860px;
