@@ -180,6 +180,18 @@ p { margin: 0 0 1rem; }
   z-index: 1;
   pointer-events: none;
 }
+.hero-video::-webkit-media-controls,
+.hero-video::-webkit-media-controls-enclosure,
+.hero-video::-webkit-media-controls-panel,
+.hero-video::-webkit-media-controls-start-playback-button,
+.hero-video::-webkit-media-controls-overlay-play-button,
+.hero-video::-webkit-media-controls-play-button {
+  display: none !important;
+  -webkit-appearance: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
 .hero-video-overlay {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
