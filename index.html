@@ -86,7 +86,7 @@
 <main>
   <!-- HERO WITH BACKGROUND VIDEO -->
   <section class="hero-video-section">
-    <video id="hero-bg-video" class="hero-video" autoplay muted loop playsinline webkit-playsinline disablepictureinpicture disableremoteplayback controlslist="nofullscreen noremoteplayback nodownload" preload="auto">
+    <video id="hero-bg-video" class="hero-video" autoplay muted="muted" loop playsinline webkit-playsinline disablepictureinpicture disableremoteplayback controlslist="nofullscreen noremoteplayback nodownload" preload="auto">
       <source src="assets/vid/institute-video.mp4" type="video/mp4">
       <source src="assets/vid/WhatsApp%20Video%202026-09-07%20at%2010.09.33.mp4" type="video/mp4">
     </video>
@@ -118,21 +118,22 @@
     (function() {
       var vid = document.getElementById('hero-bg-video');
       if (vid) {
+        vid.defaultMuted = true;
         vid.muted = true;
+        vid.volume = 0;
         var playVid = function() {
           vid.muted = true;
-          if (vid.paused) {
-            vid.play().catch(function(){});
-          }
+          vid.volume = 0;
+          var p = vid.play();
+          if (p && p.catch) { p.catch(function(){}); }
         };
         playVid();
-        vid.addEventListener('pause', function() {
-          playVid();
-        });
+        vid.addEventListener('pause', function() { playVid(); });
         document.addEventListener('DOMContentLoaded', playVid);
         window.addEventListener('load', playVid);
-        document.addEventListener('touchstart', playVid, {passive: true});
-        document.addEventListener('click', playVid, {passive: true});
+        window.addEventListener('pageshow', playVid);
+        document.addEventListener('touchstart', playVid, {passive: true, once: true});
+        document.addEventListener('click', playVid, {passive: true, once: true});
       }
     })();
   </script>
