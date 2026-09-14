@@ -211,22 +211,27 @@ p { margin: 0 0 1rem; }
 }
 .hero-title-light {
   color: #ffffff;
-  font-size: clamp(2.1rem, 3.8vw, 3.2rem);
+  font-size: clamp(1.35rem, 3.1vw, 2.65rem);
   margin-top: 0;
   margin-bottom: 14px;
-  line-height: 1.25;
+  line-height: 1.3;
   font-family: var(--font-head);
   font-weight: 800;
   letter-spacing: -0.02em;
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
-  max-width: 900px;
+  max-width: 980px;
   margin-left: auto;
   margin-right: auto;
 }
-@media (max-width: 640px) {
-  .hero-br { display: none; }
+.hero-line-1, .hero-line-2 {
+  display: block;
 }
-.hero-title-light span {
+@media (min-width: 580px) {
+  .hero-line-1, .hero-line-2 {
+    white-space: nowrap;
+  }
+}
+.hero-title-light span.highlight-text {
   color: #fb923c;
   background: linear-gradient(120deg, #f97316, #fbbf24);
   -webkit-background-clip: text;
