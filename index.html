@@ -86,10 +86,7 @@
 <main>
   <!-- HERO WITH BACKGROUND VIDEO -->
   <section class="hero-video-section">
-    <video id="hero-bg-video" class="hero-video" autoplay muted="muted" loop playsinline webkit-playsinline disablepictureinpicture disableremoteplayback controlslist="nofullscreen noremoteplayback nodownload" preload="auto">
-      <source src="assets/vid/institute-video.mp4" type="video/mp4">
-      <source src="assets/vid/WhatsApp%20Video%202026-09-07%20at%2010.09.33.mp4" type="video/mp4">
-    </video>
+    <video id="hero-bg-video" class="hero-video" src="assets/vid/institute-video.mp4" autoplay muted loop playsinline webkit-playsinline disablepictureinpicture disableremoteplayback controlslist="nofullscreen noremoteplayback nodownload" preload="auto"></video>
     <div class="hero-video-overlay"></div>
     <div class="container hero-video-content">
       <div class="hero-text-card">
@@ -121,19 +118,22 @@
         vid.defaultMuted = true;
         vid.muted = true;
         vid.volume = 0;
-        var playVid = function() {
+        var startVideo = function() {
+          vid.defaultMuted = true;
           vid.muted = true;
           vid.volume = 0;
-          var p = vid.play();
-          if (p && p.catch) { p.catch(function(){}); }
+          var promise = vid.play();
+          if (promise && promise.catch) {
+            promise.catch(function() {
+              vid.play().catch(function(){});
+            });
+          }
         };
-        playVid();
-        vid.addEventListener('pause', function() { playVid(); });
-        document.addEventListener('DOMContentLoaded', playVid);
-        window.addEventListener('load', playVid);
-        window.addEventListener('pageshow', playVid);
-        document.addEventListener('touchstart', playVid, {passive: true, once: true});
-        document.addEventListener('click', playVid, {passive: true, once: true});
+        startVideo();
+        vid.addEventListener('pause', function() { startVideo(); });
+        document.addEventListener('DOMContentLoaded', startVideo);
+        window.addEventListener('load', startVideo);
+        window.addEventListener('pageshow', startVideo);
       }
     })();
   </script>
