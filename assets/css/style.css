@@ -179,7 +179,7 @@ p { margin: 0 0 1rem; }
   object-fit: cover;
   z-index: 1;
   pointer-events: none;
-  filter: brightness(1.05) saturate(1.05);
+  filter: brightness(1.04) saturate(1.04);
 }
 .hero-video::-webkit-media-controls,
 .hero-video::-webkit-media-controls-enclosure,
@@ -196,7 +196,7 @@ p { margin: 0 0 1rem; }
 .hero-video-overlay {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.45) 100%);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0.65) 100%);
   z-index: 2;
   pointer-events: none;
 }
@@ -213,7 +213,7 @@ p { margin: 0 0 1rem; }
   width: 100%;
   margin: 0 auto;
   text-align: center;
-  color: #0f172a;
+  color: var(--ink);
   background: transparent;
   border: none;
   box-shadow: none;
@@ -226,7 +226,7 @@ p { margin: 0 0 1rem; }
   .hero-text-card { padding: 0 16px; }
 }
 .hero-title-light {
-  color: #0f172a;
+  color: var(--ink);
   font-size: clamp(1.35rem, 3.1vw, 2.65rem);
   margin-top: 0;
   margin-bottom: 14px;
@@ -234,7 +234,7 @@ p { margin: 0 0 1rem; }
   font-family: var(--font-head);
   font-weight: 800;
   letter-spacing: -0.02em;
-  text-shadow: 0 1px 8px rgba(255, 255, 255, 0.9);
+  text-shadow: 0 1px 8px rgba(255, 255, 255, 0.95);
   max-width: 980px;
   margin-left: auto;
   margin-right: auto;
@@ -248,26 +248,26 @@ p { margin: 0 0 1rem; }
   }
 }
 .hero-title-light span.highlight-text {
-  color: #0284c7;
-  text-shadow: 0 1px 8px rgba(255, 255, 255, 0.9);
+  color: var(--brand-dark);
+  text-shadow: 0 1px 8px rgba(255, 255, 255, 0.95);
 }
 .hero-sub-light {
   font-size: 1.08rem;
-  color: #0369a1;
+  color: var(--brand-dark);
   margin-top: 10px;
   margin-bottom: 10px;
   font-family: var(--font-head);
   font-weight: 700;
-  text-shadow: 0 1px 6px rgba(255, 255, 255, 0.9);
+  text-shadow: 0 1px 6px rgba(255, 255, 255, 0.95);
 }
 .lead-light {
-  color: #1e293b;
+  color: var(--body);
   font-size: 0.96rem;
   font-weight: 500;
   line-height: 1.6;
   margin: 0 auto 12px auto;
   max-width: 720px;
-  text-shadow: 0 1px 6px rgba(255, 255, 255, 0.9);
+  text-shadow: 0 1px 6px rgba(255, 255, 255, 0.95);
 }
 .hero-details-light {
   margin-top: 8px;
@@ -275,7 +275,7 @@ p { margin: 0 0 1rem; }
 }
 .hero-summary-light {
   cursor: pointer;
-  color: #0284c7;
+  color: var(--brand-dark);
   font-weight: 700;
   font-family: var(--font-head);
   font-size: 0.9rem;
@@ -285,25 +285,25 @@ p { margin: 0 0 1rem; }
   justify-content: center;
   gap: 4px;
   transition: color 0.2s;
-  text-shadow: 0 1px 4px rgba(255, 255, 255, 0.9);
+  text-shadow: 0 1px 4px rgba(255, 255, 255, 0.95);
 }
 .hero-summary-light:hover {
-  color: #0369a1;
+  color: var(--accent-dark);
 }
 .hero-details-content-light {
   margin: 10px auto 0 auto;
   max-width: 680px;
   font-size: 0.88rem;
-  color: #0f172a;
+  color: var(--ink);
   line-height: 1.6;
   display: flex;
   flex-direction: column;
   gap: 8px;
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.95);
   padding: 14px 18px;
   border-radius: 12px;
-  border: 1px solid rgba(15, 23, 42, 0.12);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--line);
+  box-shadow: 0 4px 14px rgba(21, 51, 46, 0.08);
   text-align: center;
 }
 .hero-trust-light {
@@ -311,25 +311,21 @@ p { margin: 0 0 1rem; }
   flex-wrap: wrap;
   justify-content: center;
   gap: 12px;
-  margin-top: 20px;
-  color: #0f172a;
-  font-size: 0.9rem;
+  margin-top: 22px;
+  font-size: 0.94rem;
 }
 .hero-trust-light span {
-  background: rgba(255, 255, 255, 0.92);
-  border: 1px solid rgba(15, 23, 42, 0.18);
-  padding: 7px 16px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid var(--line);
+  padding: 8px 18px;
   border-radius: 30px;
-  color: #0f172a;
+  color: var(--ink);
   font-weight: 600;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 14px rgba(21, 51, 46, 0.08);
 }
 .hero-trust-light b {
-  color: #0284c7;
+  color: var(--brand-dark);
   font-weight: 800;
-}
-.hero-trust-light b {
-  color: #ffffff;
 }
 
 /* ---------- cards / grids ---------- */
